@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
         if let button = statusItem.button {
-          button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
+          button.image = NSImage(named:NSImage.Name("status"))
         }
         
         guard let _ = UserDefaults.standard.object(forKey: "savedTeamData") else {
@@ -68,7 +68,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let threeABR = (valueDict["3DABR"] ?? "ATL")
 
         API().getNextGame(completion: { dict in
-            ShowView(selectView: AnyView(NBAlert(title: dict["name"] as! String, description: "\(dict["shortName"] ?? "ERROR") on \(dict["detail"] ?? "ERROR")", buttonText: "Game On!", image: "\(threeABR)")), width: 250, height: 300).showSelectView()
+            ShowView(selectView: AnyView(NBAlert(title: dict["name"] as! String, description: "\(dict["shortName"] as! String) on \(dict["detail"] as! String)", buttonText: "Game On!", image: "\(threeABR)")), width: 250, height: 300).showSelectView()
         })
     }
     
