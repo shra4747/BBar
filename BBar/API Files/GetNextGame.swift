@@ -16,8 +16,8 @@ extension API {
         }
         let currentTeam: Dictionary<String, Dictionary<String, String>> = savedTeamData as! Dictionary<String, Dictionary<String, String>>
         
-        let teamFullName = currentTeam.keys.first ?? "Atlanta Hawls"
-        let iconABR = (currentTeam.values.first!)["3DABR"] ?? "ATL"
+        let _ = currentTeam.keys.first ?? "Atlanta Hawks"
+        let _ = (currentTeam.values.first!)["3DABR"] ?? "ATL"
         let testEspn = (currentTeam.values)
         let stringEspn = ("\(testEspn)")
         var espnABR = ""
@@ -27,8 +27,6 @@ extension API {
             espnABR = ((("\(phone)").prefix(5)).replacingOccurrences(of: "\"", with: ""))
         }
         
-        print("\(teamFullName): \(iconABR), \(espnABR)")
-
 
         let link = "\(API.Links().specificTeam)\(espnABR)"
         let url = URL(string: "\(link)")!
@@ -40,11 +38,25 @@ extension API {
                 let id = (Array(arrayLiteral: ((Array(arrayLiteral: (jsonDict["team"] as? [String: Any])?["nextEvent"])))[0]).first!! as? [NSDictionary])?.first!["id"] as! String
                 let name = (Array(arrayLiteral: ((Array(arrayLiteral: (jsonDict["team"] as? [String: Any])?["nextEvent"])))[0]).first!! as? [NSDictionary])?.first!["name"] as! String
                 let shortName = (Array(arrayLiteral: ((Array(arrayLiteral: (jsonDict["team"] as? [String: Any])?["nextEvent"])))[0]).first!! as? [NSDictionary])?.first!["shortName"] as! String
-                let competitions = (Array(arrayLiteral: ((Array(arrayLiteral: (jsonDict["team"] as? [String: Any])?["nextEvent"])))[0]).first!! as? [NSDictionary])?.first!["competitions"] as! [[String: Any]]
+                _ = (Array(arrayLiteral: ((Array(arrayLiteral: (jsonDict["team"] as? [String: Any])?["nextEvent"])))[0]).first!! as? [NSDictionary])?.first!["competitions"] as! [[String: Any]]
                 
-                let detail = (((competitions.first)!["status"] as! [String: Any])["type"] as! [String: Any])["detail"]
+                let ztime = (Array(arrayLiteral: ((Array(arrayLiteral: (jsonDict["team"] as? [String: Any])?["nextEvent"])))[0]).first!! as? [NSDictionary])?.first!["date"] as! String
+
+                let dateFormatter = DateFormatter()
+                dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mmZ"
+                let date = dateFormatter.date(from: ztime)
+
+                let formatter1 = DateFormatter()
+                formatter1.dateStyle = .medium
+                formatter1.timeZone = .autoupdatingCurrent
+                formatter1.timeStyle = .short
+                
+                let detail = (formatter1.string(from: date!))
 
                 let returnDict = ["id": id, "name": name, "shortName": shortName , "detail": detail]
+                
+                
                 
                 DispatchQueue.main.async {
                     completion(returnDict as [String : Any])

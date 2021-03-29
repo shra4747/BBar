@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC4F0C912611371000F55ED9 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F0C902611371000F55ED9 /* Dashboard.swift */; };
+		DC4F0CBD2611885700F55ED9 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = DC4F0CBC2611885700F55ED9 /* KeyboardShortcuts */; };
+		DC4F0CC02611887200F55ED9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F0CBF2611887200F55ED9 /* Constants.swift */; };
+		DC4F0CC626121A1E00F55ED9 /* SpotlightSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F0CC526121A1E00F55ED9 /* SpotlightSearch.swift */; };
+		DC4F0CC92612224100F55ED9 /* FloatingPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F0CC82612224100F55ED9 /* FloatingPanel.swift */; };
+		DC4F0CE52612514800F55ED9 /* ResponderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F0CE42612514800F55ED9 /* ResponderTextField.swift */; };
 		DCC1A908261101DF00271F52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A907261101DF00271F52 /* AppDelegate.swift */; };
 		DCC1A90C261101E200271F52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A90B261101E200271F52 /* Assets.xcassets */; };
 		DCC1A90F261101E200271F52 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A90E261101E200271F52 /* Preview Assets.xcassets */; };
@@ -21,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC4F0C902611371000F55ED9 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		DC4F0CBF2611887200F55ED9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DC4F0CC526121A1E00F55ED9 /* SpotlightSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightSearch.swift; sourceTree = "<group>"; };
+		DC4F0CC82612224100F55ED9 /* FloatingPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPanel.swift; sourceTree = "<group>"; };
+		DC4F0CE42612514800F55ED9 /* ResponderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderTextField.swift; sourceTree = "<group>"; };
 		DCC1A904261101DF00271F52 /* BBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC1A907261101DF00271F52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCC1A90B261101E200271F52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4F0CBD2611885700F55ED9 /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				DCC1A929261102C600271F52 /* Onboard.swift */,
+				DC4F0CC526121A1E00F55ED9 /* SpotlightSearch.swift */,
+				DC4F0C902611371000F55ED9 /* Dashboard.swift */,
 				DCC1A92C261102DC00271F52 /* NBAlert.swift */,
 			);
 			path = Views;
@@ -101,6 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				DCC1A907261101DF00271F52 /* AppDelegate.swift */,
+				DC4F0CBF2611887200F55ED9 /* Constants.swift */,
+				DC4F0CC82612224100F55ED9 /* FloatingPanel.swift */,
+				DC4F0CE42612514800F55ED9 /* ResponderTextField.swift */,
 				DCC1A9252611028B00271F52 /* ShowView.swift */,
 				DCC1A9222611027F00271F52 /* HexExtension.swift */,
 			);
@@ -132,6 +149,9 @@
 			dependencies = (
 			);
 			name = BBar;
+			packageProductDependencies = (
+				DC4F0CBC2611885700F55ED9 /* KeyboardShortcuts */,
+			);
 			productName = BBar;
 			productReference = DCC1A904261101DF00271F52 /* BBar.app */;
 			productType = "com.apple.product-type.application";
@@ -159,6 +179,9 @@
 				Base,
 			);
 			mainGroup = DCC1A8FB261101DF00271F52;
+			packageReferences = (
+				DC4F0CBB2611885700F55ED9 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+			);
 			productRefGroup = DCC1A905261101DF00271F52 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -187,13 +210,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4F0CC92612224100F55ED9 /* FloatingPanel.swift in Sources */,
 				DCC1A9262611028B00271F52 /* ShowView.swift in Sources */,
+				DC4F0CE52612514800F55ED9 /* ResponderTextField.swift in Sources */,
 				DCC1A92A261102C600271F52 /* Onboard.swift in Sources */,
+				DC4F0CC626121A1E00F55ED9 /* SpotlightSearch.swift in Sources */,
+				DC4F0C912611371000F55ED9 /* Dashboard.swift in Sources */,
 				DCC1A9302611031400271F52 /* Classes.swift in Sources */,
 				DCC1A9232611027F00271F52 /* HexExtension.swift in Sources */,
 				DCC1A9332611032200271F52 /* GetNextGame.swift in Sources */,
 				DCC1A92D261102DC00271F52 /* NBAlert.swift in Sources */,
 				DCC1A908261101DF00271F52 /* AppDelegate.swift in Sources */,
+				DC4F0CC02611887200F55ED9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +362,7 @@
 				CODE_SIGN_ENTITLEMENTS = BBar/BBar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BBar/Preview Content\"";
 				DEVELOPMENT_TEAM = 66AVQK2TF9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -345,7 +373,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shravan-prasanth.BBar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -360,7 +388,7 @@
 				CODE_SIGN_ENTITLEMENTS = BBar/BBar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BBar/Preview Content\"";
 				DEVELOPMENT_TEAM = 66AVQK2TF9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -371,7 +399,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shravan-prasanth.BBar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -400,6 +428,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DC4F0CBB2611885700F55ED9 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC4F0CBC2611885700F55ED9 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC4F0CBB2611885700F55ED9 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DCC1A8FC261101DF00271F52 /* Project object */;
 }

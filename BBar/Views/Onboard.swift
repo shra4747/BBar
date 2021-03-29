@@ -62,7 +62,7 @@ struct Onboard: View {
                         UserDefaults.standard.set(currentTeam, forKey: "savedTeamData")
 //                        API().getNextGame()
                         NSApplication.shared.keyWindow?.close()
-                        ShowView(selectView: AnyView(NBAlert(title: "NBA.Bar completed set up.", description: "The application has finished the setup process. Enjoy!", buttonText: "Dismiss")), width: 250, height: 300).showSelectView()
+                        ShowView(selectView: AnyView(NBAlert(title: "NBA.Bar completed set up.", description: "The application has finished the setup process. Enjoy!", buttonText: "Dismiss")), width: 250, height: 300, closable: true).showSelectView()
                     }) {
                         Text("Select")
                     }
